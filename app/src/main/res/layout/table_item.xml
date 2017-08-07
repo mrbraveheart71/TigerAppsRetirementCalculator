@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/table_period"
+        android:background="@drawable/cell_shape"
+        android:layout_weight="0.25"
+        android:textColor="@color/colorText"
+        android:textSize = "@dimen/caption_text_size"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/table_pre_tax_assets"
+        android:background="@drawable/cell_shape"
+        android:textColor="@color/colorText"
+        android:layout_weight="0.25"
+        android:textSize = "@dimen/caption_text_size"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/table_post_tax_assets"
+        android:background="@drawable/cell_shape"
+        android:textColor="@color/colorText"
+        android:textSize = "@dimen/caption_text_size"
+        android:layout_weight="0.25"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/table_pre_tax_contribution"
+        android:background="@drawable/cell_shape"
+        android:textColor="@color/colorText"
+        android:textSize = "@dimen/caption_text_size"
+        android:layout_weight="0.25"
+        android:gravity="center"/>
+
+</TableRow>
