@@ -1,6 +1,7 @@
 package main.tigerappsretirementcalculator;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,28 @@ public class InputFragment extends android.support.v4.app.Fragment implements Se
     private SeekBar mSocialSecuritySeekBar;
     private SeekBar mSocialSecurityAgeSeekBar;
     private SeekBar mAfterTaxWithdrawalSeekBar;
+
+
+    OnChangeParameterListener mChangeParameterCallback;
+
+    // Container Activity must implement this interface
+    public interface OnChangeParameterListener {
+        public void onChangeParameter();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mChangeParameterCallback = (OnChangeParameterListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+    }
 
     public InputFragment() {
     }
@@ -145,6 +168,8 @@ public class InputFragment extends android.support.v4.app.Fragment implements Se
         }
         // calculate the cashflows
         recalculateResult();
+        // submit this to the Activity
+        mChangeParameterCallback.onChangeParameter();
     }
 
     // Recalculate results and show it
@@ -154,6 +179,9 @@ public class InputFragment extends android.support.v4.app.Fragment implements Se
                 mPostTaxAssetsSeekbar.getProgress() * 10000, mPostTaxContributionsSeekBar.getProgress() * 1000, mSocialSecuritySeekBar.getProgress() * 100,
                 mSocialSecurityAgeSeekBar.getProgress() + 62, mAfterTaxWithdrawalSeekBar.getProgress() * 100);
         myRetirement.Calculate();
+
+        ((MainActivity) getActivity()).setRetirementPlanner(myRetirement);
+
         double endOfLifeAssets = myRetirement.GetEndOfLifeAssets();
         if (endOfLifeAssets > 0)
             mInputCashflowResults.setText(String.format(getString(R.string.input_result), endOfLifeAssets));

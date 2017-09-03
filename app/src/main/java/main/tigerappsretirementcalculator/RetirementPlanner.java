@@ -31,6 +31,37 @@ public class RetirementPlanner {
 
     private RetirementSnapshot[] Cashflows;
 
+    public int getCurrentAge() {
+        return CurrentAge;
+    }
+
+    public void setCurrentAge(int currentAge) {
+        CurrentAge = currentAge;
+    }
+
+    public int getRetirementAge() {
+        return RetirementAge;
+    }
+
+    public void setRetirementAge(int retirementAge) {
+        RetirementAge = retirementAge;
+    }
+
+    public int getLifeExpectancy() {
+        return LifeExpectancy;
+    }
+
+    public void setLifeExpectancy(int lifeExpectancy) {
+        LifeExpectancy = lifeExpectancy;
+    }
+
+    public RetirementSnapshot getCashflow(int age) {
+        int i=0;
+        while ((i < Cashflows.length) && (Cashflows[i].getAge() != age))
+            i++;
+        return Cashflows[i];
+    }
+
     public RetirementPlanner(int currentAge,
                              int retirementAge,
                              int lifeExpectancy,
@@ -61,7 +92,7 @@ public class RetirementPlanner {
 
     public void Calculate() {
         // Everything is zero before the Current Age;
-        for (int i=0; i < CurrentAge-1;i++) {
+        for (int i=0; i < CurrentAge;i++) {
             Cashflows[i] = new RetirementSnapshot(0,i);
         }
         // At time of asset build up (Current Age to Retirement Age)
@@ -86,6 +117,7 @@ public class RetirementPlanner {
             // First try social security withdrawal
             if (i> this.SocialSecurityWithdrawalAge) {
                 remainingWithdrawal = remainingWithdrawal - this.SocialSecurityIncome*12;
+                Cashflows[i].setSocialSecurityIncomeWithdrawal(this.SocialSecurityIncome*12);
             }
             // Then try post income tax assets
             if (remainingWithdrawal > Cashflows[i].getPostIncomeTaxAssets()) {
@@ -106,6 +138,7 @@ public class RetirementPlanner {
             // Now after retirement yield application
             Cashflows[i].setPreIncomeTaxAssets(Cashflows[i].getPreIncomeTaxAssets() * (1+this.PostRetirementYield) );
             Cashflows[i].setPostIncomeTaxAssets(Cashflows[i].getPostIncomeTaxAssets() * (1+this.PostRetirementYield) );
+            Cashflows[i].setTotalAfterTaxWithdrawal(this.AfterTaxWithdrawal*12-remainingWithdrawal);
 
         }
     }

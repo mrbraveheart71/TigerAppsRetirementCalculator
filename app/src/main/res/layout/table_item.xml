@@ -6,42 +6,52 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/table_period"
         android:background="@drawable/cell_shape"
-        android:layout_weight="0.25"
+        android:layout_weight="0.2"
         android:textColor="@color/colorText"
-        android:textSize = "@dimen/caption_text_size"
+        android:textSize = "@dimen/table_text_size"
         android:gravity="center"/>
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/table_pre_tax_assets"
         android:background="@drawable/cell_shape"
         android:textColor="@color/colorText"
-        android:layout_weight="0.25"
-        android:textSize = "@dimen/caption_text_size"
+        android:layout_weight="0.2"
+        android:textSize = "@dimen/table_text_size"
         android:gravity="center"/>
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/table_post_tax_assets"
         android:background="@drawable/cell_shape"
         android:textColor="@color/colorText"
-        android:textSize = "@dimen/caption_text_size"
-        android:layout_weight="0.25"
+        android:textSize = "@dimen/table_text_size"
+        android:layout_weight="0.2"
         android:gravity="center"/>
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/table_pre_tax_contribution"
+        android:id="@+id/table_social_security_distribution"
         android:background="@drawable/cell_shape"
         android:textColor="@color/colorText"
-        android:textSize = "@dimen/caption_text_size"
-        android:layout_weight="0.25"
+        android:textSize = "@dimen/table_text_size"
+        android:layout_weight="0.2"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/table_retirement_withdrawal"
+        android:background="@drawable/cell_shape"
+        android:textColor="@color/colorText"
+        android:textSize = "@dimen/table_text_size"
+        android:layout_weight="0.2"
         android:gravity="center"/>
 
 </TableRow>
