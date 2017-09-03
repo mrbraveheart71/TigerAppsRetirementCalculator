@@ -1,0 +1,402 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="main.tigerappsretirementcalculator.MainActivity$PlaceholderFragment">
+
+    <TextView
+        android:id="@+id/currentAgeLabel"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:text="Current Age"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/currentAgeSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/currentAgeLabel"
+        android:layout_alignRight="@id/currentAgeLabel"
+        android:layout_below="@id/currentAgeLabel"
+        android:text="35"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/currentAgeSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/currentAgeLabel"
+        android:layout_alignRight="@id/currentAgeLabel"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentAgeSeekBarResult"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:max="100"
+        android:min="0"
+        android:progress="35" />
+
+    <TextView
+        android:id="@+id/RetirementAgeLabel"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:text="Retirement Age"
+        android:layout_toRightOf="@id/currentAgeLabel"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/RetirementAgeSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/RetirementAgeLabel"
+        android:layout_alignRight="@id/RetirementAgeLabel"
+        android:layout_below="@id/currentAgeLabel"
+        android:text="65"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/RetirementAgeSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/RetirementAgeLabel"
+        android:layout_alignRight="@id/RetirementAgeLabel"
+        android:layout_below="@id/currentAgeSeekBarResult"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="65" />
+
+    <TextView
+        android:id="@+id/LifeExpectancyLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentAgeSeekbar"
+        android:text="Life Expectancy"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/LifeExpectancySeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/currentAgeLabel"
+        android:layout_alignRight="@id/currentAgeLabel"
+        android:layout_below="@id/LifeExpectancyLabel"
+        android:text="80"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/LifeExpectancySeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/LifeExpectancyLabel"
+        android:layout_alignRight="@id/LifeExpectancyLabel"
+        android:layout_below="@id/LifeExpectancySeekBarResult"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="80" />
+
+    <TextView
+        android:id="@+id/PreTaxAssetsLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LifeExpectancySeekbar"
+        android:text="Pretax Assets (401K)"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/PreTaxAssetsSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/PreTaxAssetsLabel"
+        android:layout_alignRight="@id/PreTaxAssetsLabel"
+        android:layout_below="@id/PreTaxAssetsLabel"
+        android:text="1000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/PreTaxAssetsSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/PreTaxAssetsLabel"
+        android:layout_alignRight="@id/PreTaxAssetsLabel"
+        android:layout_below="@id/PreTaxAssetsSeekBarResult"
+        android:max="200"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/PreTaxContributionsLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/PreTaxAssetsLabel"
+        android:layout_below="@id/LifeExpectancySeekbar"
+        android:text="Pre Tax Annual Contributions"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/PreTaxContributionsSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/PreTaxContributionsLabel"
+        android:layout_alignRight="@id/PreTaxContributionsLabel"
+        android:layout_below="@id/PreTaxContributionsLabel"
+        android:text="1000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/PreTaxContributionsSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/PreTaxContributionsLabel"
+        android:layout_alignRight="@id/PreTaxContributionsLabel"
+        android:layout_below="@id/PreTaxContributionsSeekBarResult"
+        android:max="50"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="10" />
+
+    <TextView
+        android:id="@+id/PostTaxAssetsLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PreTaxAssetsSeekbar"
+        android:text="Assets (Investments)"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/PostTaxAssetsSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/PostTaxAssetsLabel"
+        android:layout_alignRight="@id/PostTaxAssetsLabel"
+        android:layout_below="@id/PostTaxAssetsLabel"
+        android:text="1000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/PostTaxAssetsSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/PostTaxAssetsLabel"
+        android:layout_alignRight="@id/PostTaxAssetsLabel"
+        android:layout_below="@id/PostTaxAssetsSeekBarResult"
+        android:max="200"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/PostTaxContributionsLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/PostTaxAssetsLabel"
+        android:layout_below="@id/PreTaxContributionsSeekbar"
+        android:text="Annual Contributions"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/PostTaxContributionsSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/PostTaxContributionsLabel"
+        android:layout_alignRight="@id/PostTaxContributionsLabel"
+        android:layout_below="@id/PostTaxContributionsLabel"
+        android:text="1000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/PostTaxContributionsSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/PostTaxContributionsLabel"
+        android:layout_alignRight="@id/PostTaxContributionsLabel"
+        android:layout_below="@id/PostTaxContributionsSeekBarResult"
+        android:max="50"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/SocialSecurityLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PostTaxAssetsSeekbar"
+        android:text="Social Security (Monthly)"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/SocialSecuritySeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/SocialSecurityLabel"
+        android:layout_alignRight="@id/SocialSecurityLabel"
+        android:layout_below="@id/SocialSecurityLabel"
+        android:text="2000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/SocialSecuritySeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/SocialSecurityLabel"
+        android:layout_alignRight="@id/SocialSecurityLabel"
+        android:layout_below="@id/SocialSecuritySeekBarResult"
+        android:max="35"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/SocialSecurityAgeLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/SocialSecurityLabel"
+        android:layout_below="@id/PostTaxContributionsSeekbar"
+        android:text="Social Security Age"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/SocialSecurityAgeSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/PostTaxContributionsLabel"
+        android:layout_alignRight="@id/PostTaxContributionsLabel"
+        android:layout_below="@id/SocialSecurityAgeLabel"
+        android:text="67"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/SocialSecurityAgeSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/PostTaxContributionsLabel"
+        android:layout_alignRight="@id/PostTaxContributionsLabel"
+        android:layout_below="@id/SocialSecurityAgeSeekBarResult"
+        android:max="8"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/AfterTaxWithdrawalLabel"
+        android:layout_marginTop="@dimen/input_in_between_margin_rows"
+        android:layout_width="@dimen/input_col_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SocialSecuritySeekbar"
+        android:text="After Tax Withdrawal (Monthly) at Retirement"
+        android:layout_alignParentLeft="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <TextView
+        android:id="@+id/AfterTaxWithdrawalSeekBarResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/SocialSecurityLabel"
+        android:layout_alignRight="@id/SocialSecurityLabel"
+        android:layout_below="@id/AfterTaxWithdrawalLabel"
+        android:text="2000"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/input_label_size" />
+
+    <SeekBar
+        android:id="@+id/AfterTaxWithdrawalSeekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_above_seek_bar"
+        android:layout_alignLeft="@id/SocialSecurityLabel"
+        android:layout_alignRight="@id/SocialSecurityLabel"
+        android:layout_below="@id/AfterTaxWithdrawalSeekBarResult"
+        android:max="200"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:thumb="@drawable/thumb_drawable"
+        android:min="0"
+        android:progress="20" />
+
+    <TextView
+        android:id="@+id/InputCashflowResults"
+        android:layout_marginTop="@dimen/input_in_between_intput_and_output"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/output_text_view_size"
+        android:layout_below="@id/AfterTaxWithdrawalSeekbar"
+        android:text="You can retire based upon your assumptions above."
+        android:gravity="left|center_vertical"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/input_output_size" />
+
+</RelativeLayout>
+

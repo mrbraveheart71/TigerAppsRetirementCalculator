@@ -1,0 +1,21 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dip</dimen>
+    <dimen name="activity_vertical_margin">16dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">4dip</dimen>
+    <dimen name="caption_text_size">16dip</dimen>
+    <dimen name="seekbar_text_size">16dip</dimen>
+    <dimen name="toolbar_height">40dip</dimen>
+    <dimen name="tab_layout_height">30dip</dimen>
+    <dimen name="input_col_size">160dip</dimen>
+    <dimen name="input_in_between_margin_rows">10dip</dimen>
+    <dimen name="input_in_between_intput_and_output">10dip</dimen>
+    <dimen name="input_label_size">12sp</dimen>
+    <dimen name="input_output_size">15sp</dimen>
+    <dimen name="magin_above_seek_bar">4dip</dimen>
+    <dimen name="output_text_view_size">80dip</dimen>
+    <dimen name="table_text_size">10dip</dimen>
+    <dimen name="tab_padding">2dip</dimen>
+
+</resources>

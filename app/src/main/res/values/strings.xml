@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tiger Apps Retirement Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="current_age_seek_bar_result_string">%1$d</string>
+    <string name="life_expectancy_seek_bar_result_string">%1$d</string>
+    <string name="retirement_age_seek_bar_result_string">%1$d</string>
+    <string name="input_result">Your end of life balance is $%1$,.0f</string>
+    <string name="input_result_out_of_money">You do not have enough money until end of life.</string>
+</resources>
